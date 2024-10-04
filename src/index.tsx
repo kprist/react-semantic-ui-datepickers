@@ -18,6 +18,8 @@ import { Locale, SemanticDatepickerProps } from './types';
 import Calendar from './components/calendar';
 import Input from './components/input';
 
+import elGR from './locales/el-GR.json';
+
 const style: React.CSSProperties = {
   display: 'inline-block',
   position: 'relative',
@@ -169,11 +171,15 @@ class SemanticDatepicker extends React.Component<
 
     let localeJson: Locale;
 
-    try {
-      localeJson = require(`./locales/${locale}.json`);
-    } catch (e) {
-      console.warn(`"${locale}" is not a valid locale`);
-      localeJson = require('./locales/en-US.json');
+    if (locale === 'el-GR') {
+      localeJson = elGR;
+    } else {
+      try {
+        localeJson = require(`./locales/${locale}.json`);
+      } catch (e) {
+        console.warn(`"${locale}" is not a valid locale`);
+        localeJson = require('./locales/en-US.json');
+      }
     }
 
     return localeJson;
