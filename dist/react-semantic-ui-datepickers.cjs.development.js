@@ -610,125 +610,124 @@ var Calendar = function Calendar(_ref) {
       }
     }
   });
-  return jsxRuntime.jsx(semanticUiReact.Ref, {
-    innerRef: rootRef,
-    children: jsxRuntime.jsxs(semanticUiReact.Segment, _extends({}, rootProps, {
-      inverted: inverted,
-      className: cn__default["default"]('clndr-calendars-segment', (_cn = {
-        'clndr-floating': !inline
-      }, _cn[pointings[pointing]] = !inline, _cn)),
-      children: [jsxRuntime.jsx("div", {
-        className: "clndr-calendars-wrapper",
-        style: {
-          '--n': calendars.length
-        },
-        children: calendars.map(function (calendar, calendarIdx) {
-          return jsxRuntime.jsxs("div", {
-            children: [jsxRuntime.jsxs("div", {
-              className: "clndr-control",
-              children: [jsxRuntime.jsx("div", {
-                style: styles.leftBtn,
-                children: calendarIdx === 0 && jsxRuntime.jsxs(React.Fragment, {
-                  children: [jsxRuntime.jsx(CustomButton, _extends({
-                    icon: "angle double left",
-                    inverted: inverted,
-                    title: previousYear,
-                    type: "button"
-                  }, getBackProps({
-                    calendars: calendars,
-                    'aria-label': previousYear,
-                    offset: 12,
-                    onClick: onPressBtn
-                  }))), jsxRuntime.jsx(CustomButton, _extends({
-                    icon: "angle left",
-                    inverted: inverted,
-                    style: {
-                      marginRight: 0
-                    },
-                    title: previousMonth,
-                    type: "button"
-                  }, getBackProps({
-                    calendars: calendars,
-                    'aria-label': previousMonth,
-                    onClick: onPressBtn
-                  })))]
-                })
-              }), jsxRuntime.jsxs("span", {
-                title: months[calendar.month] + " " + calendar.year,
-                children: [months[calendar.month].slice(0, 3), " ", calendar.year]
-              }), jsxRuntime.jsx("div", {
-                style: styles.rightBtn,
-                children: calendarIdx === calendars.length - 1 && jsxRuntime.jsxs(React.Fragment, {
-                  children: [jsxRuntime.jsx(CustomButton, _extends({
-                    icon: "angle right",
-                    inverted: inverted,
-                    title: nextMonth,
-                    type: "button"
-                  }, getForwardProps({
-                    calendars: calendars,
-                    'aria-label': nextMonth,
-                    onClick: onPressBtn
-                  }))), jsxRuntime.jsx(CustomButton, _extends({
-                    icon: "angle double right",
-                    inverted: inverted,
-                    style: {
-                      marginRight: 0
-                    },
-                    title: nextYear,
-                    type: "button"
-                  }, getForwardProps({
-                    calendars: calendars,
-                    'aria-label': nextYear,
-                    offset: 12,
-                    onClick: onPressBtn
-                  })))]
-                })
-              })]
-            }), jsxRuntime.jsxs("div", {
-              className: "clndr-days",
-              children: [weekdays.map(function (weekday) {
-                return jsxRuntime.jsx(CalendarCell, {
+  return jsxRuntime.jsxs(semanticUiReact.Segment, _extends({
+    ref: rootRef
+  }, rootProps, {
+    inverted: inverted,
+    className: cn__default["default"]('clndr-calendars-segment', (_cn = {
+      'clndr-floating': !inline
+    }, _cn[pointings[pointing]] = !inline, _cn)),
+    children: [jsxRuntime.jsx("div", {
+      className: "clndr-calendars-wrapper",
+      style: {
+        '--n': calendars.length
+      },
+      children: calendars.map(function (calendar, calendarIdx) {
+        return jsxRuntime.jsxs("div", {
+          children: [jsxRuntime.jsxs("div", {
+            className: "clndr-control",
+            children: [jsxRuntime.jsx("div", {
+              style: styles.leftBtn,
+              children: calendarIdx === 0 && jsxRuntime.jsxs(React.Fragment, {
+                children: [jsxRuntime.jsx(CustomButton, _extends({
+                  icon: "angle double left",
                   inverted: inverted,
-                  "aria-label": weekday,
-                  title: weekday,
-                  children: weekday.slice(0, 2)
-                }, calendar.year + "-" + calendar.month + "-" + weekday);
-              }), calendar.weeks.map(function (week) {
-                return week.map(function (dateObj, weekIdx) {
-                  var key = calendar.year + "-" + calendar.month + "-" + weekIdx;
-                  if (!dateObj) {
-                    return jsxRuntime.jsx(CalendarCell, {
-                      inverted: inverted
-                    }, key);
-                  }
-                  var selectable = dateObj.selectable && filterDate(dateObj.date);
-                  var shortDate = getShortDate(dateObj.date);
-                  return jsxRuntime.jsx(CalendarCell, _extends({}, dateObj, getDateProps({
-                    dateObj: _extends({}, dateObj, {
-                      selectable: selectable
-                    }),
-                    onClick: onPressBtn
-                  }), {
-                    "data-testid": "datepicker-cell-" + shortDate,
-                    inverted: inverted,
-                    selectable: selectable,
-                    children: dateObj.date.getDate()
-                  }), key);
-                });
-              })]
+                  title: previousYear,
+                  type: "button"
+                }, getBackProps({
+                  calendars: calendars,
+                  'aria-label': previousYear,
+                  offset: 12,
+                  onClick: onPressBtn
+                }))), jsxRuntime.jsx(CustomButton, _extends({
+                  icon: "angle left",
+                  inverted: inverted,
+                  style: {
+                    marginRight: 0
+                  },
+                  title: previousMonth,
+                  type: "button"
+                }, getBackProps({
+                  calendars: calendars,
+                  'aria-label': previousMonth,
+                  onClick: onPressBtn
+                })))]
+              })
+            }), jsxRuntime.jsxs("span", {
+              title: months[calendar.month] + " " + calendar.year,
+              children: [months[calendar.month].slice(0, 3), " ", calendar.year]
+            }), jsxRuntime.jsx("div", {
+              style: styles.rightBtn,
+              children: calendarIdx === calendars.length - 1 && jsxRuntime.jsxs(React.Fragment, {
+                children: [jsxRuntime.jsx(CustomButton, _extends({
+                  icon: "angle right",
+                  inverted: inverted,
+                  title: nextMonth,
+                  type: "button"
+                }, getForwardProps({
+                  calendars: calendars,
+                  'aria-label': nextMonth,
+                  onClick: onPressBtn
+                }))), jsxRuntime.jsx(CustomButton, _extends({
+                  icon: "angle double right",
+                  inverted: inverted,
+                  style: {
+                    marginRight: 0
+                  },
+                  title: nextYear,
+                  type: "button"
+                }, getForwardProps({
+                  calendars: calendars,
+                  'aria-label': nextYear,
+                  offset: 12,
+                  onClick: onPressBtn
+                })))]
+              })
             })]
-          }, calendar.year + "-" + calendar.month);
-        })
-      }), showToday ? jsxRuntime.jsx(TodayButton, _extends({
-        inverted: inverted
-      }, getToday(minDate, maxDate), getDateProps({
-        dateObj: getToday(minDate, maxDate),
-        onClick: onPressBtn
-      }), {
-        children: todayButton
-      })) : null]
-    }))
-  });
+          }), jsxRuntime.jsxs("div", {
+            className: "clndr-days",
+            children: [weekdays.map(function (weekday) {
+              return jsxRuntime.jsx(CalendarCell, {
+                inverted: inverted,
+                "aria-label": weekday,
+                title: weekday,
+                children: weekday.slice(0, 2)
+              }, calendar.year + "-" + calendar.month + "-" + weekday);
+            }), calendar.weeks.map(function (week) {
+              return week.map(function (dateObj, weekIdx) {
+                var key = calendar.year + "-" + calendar.month + "-" + weekIdx;
+                if (!dateObj) {
+                  return jsxRuntime.jsx(CalendarCell, {
+                    inverted: inverted
+                  }, key);
+                }
+                var selectable = dateObj.selectable && filterDate(dateObj.date);
+                var shortDate = getShortDate(dateObj.date);
+                return jsxRuntime.jsx(CalendarCell, _extends({}, dateObj, getDateProps({
+                  dateObj: _extends({}, dateObj, {
+                    selectable: selectable
+                  }),
+                  onClick: onPressBtn
+                }), {
+                  "data-testid": "datepicker-cell-" + shortDate,
+                  inverted: inverted,
+                  selectable: selectable,
+                  children: dateObj.date.getDate()
+                }), key);
+              });
+            })]
+          })]
+        }, calendar.year + "-" + calendar.month);
+      })
+    }), showToday ? jsxRuntime.jsx(TodayButton, _extends({
+      inverted: inverted
+    }, getToday(minDate, maxDate), getDateProps({
+      dateObj: getToday(minDate, maxDate),
+      onClick: onPressBtn
+    }), {
+      children: todayButton
+    })) : null]
+  }));
 };
 
 var CustomIcon = function CustomIcon(_ref) {
