@@ -2,7 +2,6 @@ import isValid from 'date-fns/isValid';
 import formatStringByPattern from 'format-string-by-pattern';
 import React from 'react';
 import isEqual from 'react-fast-compare';
-import { Input as SUIInput } from 'semantic-ui-react';
 import {
   formatSelectedDate,
   keys,
@@ -109,7 +108,7 @@ class SemanticDatepicker extends React.Component<
   };
 
   el = React.createRef<HTMLDivElement>();
-  inputRef = React.createRef<SUIInput>();
+  inputRef = React.createRef<HTMLInputElement>();
 
   componentDidUpdate(prevProps: SemanticDatepickerProps) {
     const { locale, value } = this.props;
@@ -163,7 +162,7 @@ class SemanticDatepicker extends React.Component<
       return date;
     }
 
-    return this.isRangeInput ? selectedDate[0] : selectedDate;
+    return this.isRangeInput ? selectedDate[0] : (selectedDate as Date);
   }
 
   get locale() {

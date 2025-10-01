@@ -14,47 +14,49 @@ const inputData = {
   'data-testid': 'datepicker-input',
 };
 
-const CustomInput = React.forwardRef<Input, InputProps>((props, ref) => {
-  const {
-    clearIcon,
-    error,
-    icon,
-    isClearIconVisible,
-    label,
-    onClear,
-    onFocus,
-    required,
-    value,
-    ...rest
-  } = props;
+const CustomInput = React.forwardRef<HTMLInputElement, InputProps>(
+  (props, ref) => {
+    const {
+      clearIcon,
+      error,
+      icon,
+      isClearIconVisible,
+      label,
+      onClear,
+      onFocus,
+      required,
+      value,
+      ...rest
+    } = props;
 
-  return (
-    <Form.Field error={error} required={required}>
-      {label ? (
-        <label htmlFor={rest.id as string | undefined}>
-          {label as ReactNode}
-        </label>
-      ) : null}
-      <Input
-        {...rest}
-        ref={ref}
-        error={error}
-        required={required}
-        icon={
-          <CustomIcon
-            clearIcon={clearIcon}
-            icon={icon}
-            isClearIconVisible={isClearIconVisible}
-            onClear={onClear}
-            onClick={onFocus}
-          />
-        }
-        input={inputData}
-        onFocus={onFocus}
-        value={value}
-      />
-    </Form.Field>
-  );
-});
+    return (
+      <Form.Field error={error} required={required}>
+        {label ? (
+          <label htmlFor={rest.id as string | undefined}>
+            {label as ReactNode}
+          </label>
+        ) : null}
+        <Input
+          {...rest}
+          ref={ref}
+          error={error}
+          required={required}
+          icon={
+            <CustomIcon
+              clearIcon={clearIcon}
+              icon={icon}
+              isClearIconVisible={isClearIconVisible}
+              onClear={onClear}
+              onClick={onFocus}
+            />
+          }
+          input={inputData}
+          onFocus={onFocus}
+          value={value}
+        />
+      </Form.Field>
+    );
+  }
+);
 
 export default CustomInput;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Input as SUIInput } from 'semantic-ui-react';
 import { Locale, SemanticDatepickerProps } from './types';
 type SemanticDatepickerState = {
     isVisible: boolean;
@@ -11,7 +10,7 @@ type SemanticDatepickerState = {
 declare class SemanticDatepicker extends React.Component<SemanticDatepickerProps, SemanticDatepickerState> {
     static defaultProps: SemanticDatepickerProps;
     el: React.RefObject<HTMLDivElement>;
-    inputRef: React.RefObject<SUIInput>;
+    inputRef: React.RefObject<HTMLInputElement>;
     componentDidUpdate(prevProps: SemanticDatepickerProps): void;
     get isRangeInput(): boolean;
     get initialState(): {
