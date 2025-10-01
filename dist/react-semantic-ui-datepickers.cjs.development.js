@@ -902,11 +902,8 @@ var SemanticDatepicker = /*#__PURE__*/function (_React$Component) {
     _this.focusOnInput = function () {
       var _this$inputRef;
       if ((_this$inputRef = _this.inputRef) != null && _this$inputRef.current) {
-        // @ts-ignore
-        var _this$inputRef$curren = _this.inputRef.current,
-          focus = _this$inputRef$curren.focus,
-          inputRef = _this$inputRef$curren.inputRef;
-        if (document.activeElement !== inputRef.current) {
+        var focus = _this.inputRef.current.focus;
+        if (document.activeElement !== _this.inputRef.current) {
           focus();
         }
       }

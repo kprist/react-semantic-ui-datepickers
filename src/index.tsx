@@ -247,9 +247,8 @@ class SemanticDatepicker extends React.Component<
 
   focusOnInput = () => {
     if (this.inputRef?.current) {
-      // @ts-ignore
-      const { focus, inputRef } = this.inputRef.current;
-      if (document.activeElement !== inputRef.current) {
+      const { focus } = this.inputRef.current;
+      if (document.activeElement !== this.inputRef.current) {
         focus();
       }
     }
