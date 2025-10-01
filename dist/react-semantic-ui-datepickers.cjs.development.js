@@ -496,10 +496,13 @@ var CustomButton = function CustomButton(_ref) {
 var _excluded$3 = ["children", "end", "hovered", "inRange", "inverted", "nextMonth", "prevMonth", "selectable", "selected", "start", "today"];
 var CalendarCell = function CalendarCell(_ref) {
   var children = _ref.children,
-    inRange = _ref.inRange,
+    _ref$inRange = _ref.inRange,
+    inRange = _ref$inRange === void 0 ? false : _ref$inRange,
     inverted = _ref.inverted,
-    nextMonth = _ref.nextMonth,
-    prevMonth = _ref.prevMonth,
+    _ref$nextMonth = _ref.nextMonth,
+    nextMonth = _ref$nextMonth === void 0 ? false : _ref$nextMonth,
+    _ref$prevMonth = _ref.prevMonth,
+    prevMonth = _ref$prevMonth === void 0 ? false : _ref$prevMonth,
     selectable = _ref.selectable,
     selected = _ref.selected,
     today = _ref.today,
@@ -527,14 +530,6 @@ var CalendarCell = function CalendarCell(_ref) {
   }, otherProps, {
     children: children
   }));
-};
-CalendarCell.defaultProps = {
-  end: false,
-  hovered: false,
-  inRange: false,
-  nextMonth: false,
-  prevMonth: false,
-  start: false
 };
 
 var _excluded$2 = ["aria-label", "children", "end", "hovered", "inRange", "nextMonth", "prevMonth", "selectable", "selected", "start", "today"];
@@ -901,10 +896,10 @@ var SemanticDatepicker = /*#__PURE__*/function (_React$Component) {
     };
     _this.focusOnInput = function () {
       var _this$inputRef;
-      if ((_this$inputRef = _this.inputRef) != null && _this$inputRef.current) {
-        var focus = _this.inputRef.current.focus;
-        if (document.activeElement !== _this.inputRef.current) {
-          focus();
+      var currentInputElement = (_this$inputRef = _this.inputRef) == null ? void 0 : _this$inputRef.current;
+      if (currentInputElement) {
+        if (document.activeElement !== currentInputElement) {
+          currentInputElement.focus();
         }
       }
     };

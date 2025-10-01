@@ -18,15 +18,15 @@ type CalendarCellProps = {
 
 const CalendarCell = ({
   children,
-  end,
-  hovered,
-  inRange,
+  end = false,
+  hovered = false,
+  inRange = false,
   inverted,
-  nextMonth,
-  prevMonth,
+  nextMonth = false,
+  prevMonth = false,
   selectable,
   selected,
-  start,
+  start = false,
   today,
   ...otherProps
 }: PropsWithChildren<CalendarCellProps>) => {
@@ -57,15 +57,6 @@ const CalendarCell = ({
       {children}
     </button>
   );
-};
-
-CalendarCell.defaultProps = {
-  end: false,
-  hovered: false,
-  inRange: false,
-  nextMonth: false,
-  prevMonth: false,
-  start: false,
 };
 
 export default CalendarCell;

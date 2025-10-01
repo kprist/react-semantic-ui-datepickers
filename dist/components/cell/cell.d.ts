@@ -13,15 +13,5 @@ type CalendarCellProps = {
     today?: boolean;
     title?: string;
 };
-declare const CalendarCell: {
-    ({ children, end, hovered, inRange, inverted, nextMonth, prevMonth, selectable, selected, start, today, ...otherProps }: PropsWithChildren<CalendarCellProps>): import("react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        end: boolean;
-        hovered: boolean;
-        inRange: boolean;
-        nextMonth: boolean;
-        prevMonth: boolean;
-        start: boolean;
-    };
-};
+declare const CalendarCell: ({ children, end, hovered, inRange, inverted, nextMonth, prevMonth, selectable, selected, start, today, ...otherProps }: PropsWithChildren<CalendarCellProps>) => import("react/jsx-runtime").JSX.Element;
 export default CalendarCell;
