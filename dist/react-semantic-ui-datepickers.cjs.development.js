@@ -797,12 +797,12 @@ var CustomInput = /*#__PURE__*/React__default["default"].forwardRef(function (pr
   });
 });
 
-var todayButton = "Σήμερα";
-var nextMonth = "Επόμενος μήνας";
-var previousMonth = "Προηγούμενος μήνας";
-var nextYear = "Επόμενο έτος";
-var previousYear = "Προηγούμενο έτος";
-var weekdays = [
+var todayButton$1 = "Σήμερα";
+var nextMonth$1 = "Επόμενος μήνας";
+var previousMonth$1 = "Προηγούμενος μήνας";
+var nextYear$1 = "Επόμενο έτος";
+var previousYear$1 = "Προηγούμενο έτος";
+var weekdays$1 = [
 	"Κυριακή",
 	"Δευτέρα",
 	"Τρίτη",
@@ -811,7 +811,7 @@ var weekdays = [
 	"Παρασκευή",
 	"Σάββατο"
 ];
-var months = [
+var months$1 = [
 	"Ιανουάριος",
 	"Φεβρουάριος",
 	"Μάρτιος",
@@ -826,6 +826,44 @@ var months = [
 	"Δεκέμβριος"
 ];
 var elGR = {
+	todayButton: todayButton$1,
+	nextMonth: nextMonth$1,
+	previousMonth: previousMonth$1,
+	nextYear: nextYear$1,
+	previousYear: previousYear$1,
+	weekdays: weekdays$1,
+	months: months$1
+};
+
+var todayButton = "Today";
+var nextMonth = "Next month";
+var previousMonth = "Previous month";
+var nextYear = "Next year";
+var previousYear = "Previous year";
+var weekdays = [
+	"Sunday",
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday"
+];
+var months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
+];
+var enUS = {
 	todayButton: todayButton,
 	nextMonth: nextMonth,
 	previousMonth: previousMonth,
@@ -1150,6 +1188,8 @@ var SemanticDatepicker = /*#__PURE__*/function (_React$Component) {
       var localeJson;
       if (locale === 'el-GR') {
         localeJson = elGR;
+      } else if (locale === 'en-US') {
+        localeJson = enUS;
       } else {
         try {
           localeJson = require("./locales/" + locale + ".json");

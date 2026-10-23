@@ -18,6 +18,7 @@ import Calendar from './components/calendar';
 import Input from './components/input';
 
 import elGR from './locales/el-GR.json';
+import enUS from './locales/en-US.json';
 
 const style: React.CSSProperties = {
   display: 'inline-block',
@@ -172,6 +173,8 @@ class SemanticDatepicker extends React.Component<
 
     if (locale === 'el-GR') {
       localeJson = elGR;
+    } else if (locale === 'en-US') {
+      localeJson = enUS;
     } else {
       try {
         localeJson = require(`./locales/${locale}.json`);
